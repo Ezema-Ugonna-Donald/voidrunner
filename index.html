@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080b16" />
+    <meta name="description" content="Voidrunner — a neon arcade space shooter." />
+    <title>VOIDRUNNER — Deep Space Arcade</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Voidrunner home"><span class="brand-mark">✳</span> VOID<span>RUNNER</span></a>
+        <div class="top-status"><span class="status-dot"></span> DEEP SPACE // SECTOR <span id="sector-tag">00</span></div>
+        <a class="sound-toggle" id="sound-toggle" href="#" aria-label="Toggle sound"><span id="sound-icon">◖</span><span>SOUND</span></a>
+      </header>
+      <main>
+        <section class="game-shell" aria-label="Voidrunner space shooter game">
+          <div class="game-topline"><div><span class="eyebrow">ARCADE FLIGHT SIMULATOR</span><h1>THE LAST <span>FRONTIER</span></h1></div><div class="run-label"><span class="live-dot"></span> <span id="run-state">STANDBY</span></div></div>
+          <div class="game-frame" id="game-frame">
+            <div id="game"></div>
+            <button type="button" class="fullscreen-button" id="fullscreen-button" aria-label="Enter fullscreen" title="Enter fullscreen">⛶</button>
+            <div class="hud" id="hud" aria-live="polite">
+              <div class="hud-card score-card"><span class="hud-label">SCORE</span><strong id="score">000000</strong></div>
+              <div class="hud-card wave-card"><span class="hud-label">SECTOR</span><strong id="sector">00</strong></div>
+              <button class="pause-button" id="pause-button" aria-label="Pause game" title="Pause (P)">Ⅱ</button>
+              <div class="hud-card lives-card"><span class="hud-label">HULL INTEGRITY</span><div class="life-bars" id="life-bars"><i></i><i></i><i></i><i></i><i></i></div></div>
+            </div>
+            <div class="powerup-toast" id="powerup-toast" role="status" aria-live="polite"></div>
+            <div class="screen screen-start" id="start-screen">
+              <div class="screen-content"><span class="pill"><span class="status-dot"></span> PILOT READY?</span><h2>SPACE IS<br/><span>CALLING.</span></h2><p>Hold the line. Clear the sector.<br/>Make it back in one piece.</p><fieldset class="difficulty-picker"><legend>SELECT DIFFICULTY</legend><div class="difficulty-options"><button type="button" class="difficulty-option" data-difficulty="easy" aria-pressed="false"><strong>EASY</strong><small>CRUISE</small></button><button type="button" class="difficulty-option selected" data-difficulty="normal" aria-pressed="true"><strong>NORMAL</strong><small>STANDARD</small></button><button type="button" class="difficulty-option" data-difficulty="heck" aria-pressed="false"><strong>HECK YEAH</strong><small>NO MERCY</small></button></div></fieldset><div class="personal-record" id="personal-record" aria-live="polite"><span>PERSONAL BEST</span><strong id="best-sector">SECTOR 00</strong><span>HIGH SCORE <b id="best-score">000000</b></span></div><button class="primary-button" id="start-button">LAUNCH MISSION <span>↗</span></button><div class="start-hint">PRESS <kbd>ENTER</kbd> TO START</div></div>
+              <div class="controls-card"><span class="controls-title">FLIGHT CONTROLS</span><div class="control-row"><span class="key-group"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span><span>MOVE SHIP</span></div><div class="control-row"><span class="key-group"><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd></span><span>ORIENTATION</span></div><div class="control-row"><span class="key-group"><kbd>SPACE</kbd></span><span>FIRE BLASTERS</span></div></div>
+            </div>
+            <div class="screen screen-pause hidden" id="pause-screen"><div class="screen-content compact"><span class="pill">FLIGHT PAUSED</span><h2>TAKE A<br/><span>BREATHER.</span></h2><p>Your ship is holding position.</p><button class="primary-button" id="resume-button">RESUME FLIGHT <span>↗</span></button><div class="start-hint">PRESS <kbd>P</kbd> TO RESUME</div></div></div>
+            <div class="screen screen-over hidden" id="over-screen"><div class="screen-content compact"><span class="pill"><span class="status-dot"></span> MISSION COMPLETE</span><h2>NOT A BAD<br/><span>RUN, PILOT.</span></h2><p>Final score <strong id="final-score">000000</strong></p><div class="final-record">PERSONAL BEST <strong id="final-best">SECTOR 00 · 000000</strong></div><section class="share-panel" aria-label="Share your personal best"><span class="share-heading">CHALLENGE YOUR CREW</span><div class="share-actions"><button type="button" class="share-action featured" id="share-native">↗ SHARE</button><button type="button" class="share-action" id="share-discord">DISCORD · COPY</button><button type="button" class="share-action" data-share="x">X</button><button type="button" class="share-action" data-share="reddit">REDDIT</button><button type="button" class="share-action" data-share="whatsapp">WHATSAPP</button><button type="button" class="share-action" data-share="telegram">TELEGRAM</button><button type="button" class="share-action" data-share="facebook">FACEBOOK</button></div><span class="share-status" id="share-status" role="status" aria-live="polite"></span></section><button class="primary-button" id="restart-button">FLY AGAIN <span>↗</span></button><button class="settings-button" id="settings-button">CHANGE DIFFICULTY</button><div class="start-hint">PRESS <kbd>ENTER</kbd> TO REDEPLOY</div></div></div>
+          </div>
+          <div class="game-footer"><div><span class="footer-glyph">✦</span> SURVIVE THE SWARM</div><div>BUILT FOR THE BRAVE <span class="footer-sep">/</span> <span class="footer-accent">NO SECOND CHANCES</span></div></div>
+        </section>
+      </main>
+      <footer class="page-footer"><span>© 2089 VOIDRUNNER CORPS</span><span>ONE PILOT. ONE SHIP. INFINITE SPACE.</span><span class="footer-coordinate">33° 51′ 24″ S &nbsp; 151° 12′ 55″ E</span></footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
